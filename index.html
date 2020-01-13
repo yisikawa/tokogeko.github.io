@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+</head>
+
+<body>
+    <!-- <div th:if="${param.error}">
+        <h1 class="err-msg">ユーザIDまたはパスワードが間違っています。</h1>
+    </div>
+    <div th:if="${param.logout}">
+        <h1 class="info-msg">Logged out.</h1>
+    </div> -->
+    <div class="login">
+        <form>
+            <p>
+                <span><i class="fas fa-user fa-2x"></i></span>
+                <input type="text" name="userid" id="userid" placeholder="User ID" required autofocus />
+            </p>
+            <p>
+                <span><i class="fas fa-unlock-alt fa-2x"></i></span>
+                <input type="password" name="password" id="password" placeholder="Password" required />
+
+            </p>
+            <!-- <p class="remember">
+            <input type="checkbox" name="remember-me" />
+            <label>ログイン状態を保持する</label>
+        </p> -->
+            <p>
+                <input type="button" value="Log in" onclick="loginUser(this)" />
+            </p>
+
+        </form>
+    </div>
+    <script>
+        var urlName = 'https://tokogeko.net';
+        
+        function _id(id) { return document.getElementById(id); }
+        // Login & get user
+        function loginUser(obj) {
+            var userName = _id("userid");
+            var passWord = _id("password");
+
+            //Token取得
+            var tokenText = undefined;
+            $.ajax({
+                url: urlName + '/api/login',
+                type: 'POST',
+                data: { userid: userName.value, password: passWord.value },
+                async: false,
+                success: function (data, textStatus, request) {
+                    tokenText = request.getResponseHeader("Authorization");
+                    localStorage.setItem('Authorization', tokenText);
+                    window.location.href = 'map.html';
+                },
+                error: function (request, textStatus, errorThrown) {
+                    alert("Can't login " + userName.value);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

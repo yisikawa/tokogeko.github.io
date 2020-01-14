@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
 	<title>sample</title>
@@ -16,15 +16,15 @@
 
 <body onload="init()">
 	<header>
-			<h3>サンプルⅠ　表示</h3>
+		<h3>サンプルⅠ　表示</h3>
 	</header>
 	<main>
 
 		<form>
-			<label for="userid">userid</label><input type="text" name="userid" id="userid">
-			<label for="password">passwod</label><input type="password" name="password" id="password">
+			<input type="text" name="userid" placeholder="User ID" id="userid">
+			<input type="password" name="password" placeholder="Password" id="password">
 			<input type="button" name="LogIn" value="Log In" onclick="loginUser(this);">
-		</form>	
+		</form>
 		<select id="btxID" onchange="userChange(this);">
 			<option value="">ﾕｰｻﾞｰ選択</option>
 		</select>

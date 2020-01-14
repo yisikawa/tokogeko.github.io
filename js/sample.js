@@ -122,7 +122,7 @@ function paraChange() {
             var lines
             var gps = e.target;
             map_101.fitBounds(gps.getBounds());
-            _id('s_date').textContent = gps.get_start_time().toLocaleDateString();
+//            _id('s_date').textContent = gps.get_start_time().toLocaleDateString();
             _id('s_time').textContent = "開始:" + gps.get_start_time().toLocaleTimeString();
             _id('e_time').textContent = "終了:" + gps.get_end_time().toLocaleTimeString();
             _id('dist').textContent = "距離：" + gps.get_distance().toFixed(0) + "m";

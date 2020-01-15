@@ -59,8 +59,7 @@ function loginUser(obj) {
       data.forEach(function (value) {
         var option = document.createElement('option');
         option.value = value.btx_id;
-        //        option.text = value.user_id;
-        option.text = value.note;
+        option.text = value.user_id;
         userSelect.appendChild(option);
       });
     },

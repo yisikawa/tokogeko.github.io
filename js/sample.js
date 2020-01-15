@@ -38,7 +38,7 @@ function loginUser(obj) {
       alert("Can't login " + userName.value);
     }
   });
-  if( token_tex==undefined ) return;
+  if (token_tex == undefined) return;
   // Ajax set token
   $.ajaxSetup({
     beforeSend: function (xhr, settings) {
@@ -50,7 +50,7 @@ function loginUser(obj) {
   while (userSelect.firstChild) {
     userSelect.removeChild(userSelect.firstChild);
   }
-  
+
   $.ajax({
     type: 'GET',
     url: url_nam + '/api/auth',
@@ -59,7 +59,8 @@ function loginUser(obj) {
       data.forEach(function (value) {
         var option = document.createElement('option');
         option.value = value.btx_id;
-        option.text = value.user_id;
+        //        option.text = value.user_id;
+        option.text = value.note;
         userSelect.appendChild(option);
       });
     },
@@ -122,7 +123,7 @@ function paraChange() {
             var lines
             var gps = e.target;
             map_101.fitBounds(gps.getBounds());
-//            _id('s_date').textContent = gps.get_start_time().toLocaleDateString();
+            //            _id('s_date').textContent = gps.get_start_time().toLocaleDateString();
             _id('s_time').textContent = "開始:" + gps.get_start_time().toLocaleTimeString();
             _id('e_time').textContent = "終了:" + gps.get_end_time().toLocaleTimeString();
             _id('dist').textContent = "距離：" + gps.get_distance().toFixed(0) + "m";

@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+    font-size: 16px;
+}
+
+.err-msg {
+    color: red;
+    font-size: 16px;
+}
+.info-msg {
+    color: blue;
+    font-size: 16px;
+}
+
+input {
+    font-size: 16px;
+}
+
+.login {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+  
+    width: 270px;
+    height: 180px;
+    border: 1px solid;
+    padding: 5px;
+}
+
+.login .loginFrm span {
+    background-color: rgba(238, 238, 238, 1);
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+}
+
+.login .loginFrm input[type="text"],
+.login .loginFrm input[type="email"],
+.login .loginFrm input[type="password"] {
+    border: none;
+	padding: 0 0 0 16px;
+    width: 200px;
+    height: 50px;
+}
+
+.login .loginFrm input[type="submit"] {
+    background: #000;
+    border: none;
+    width: 100%;
+    height: 27px;
+    color: white;
+    cursor: pointer;
+}
+
+/* トークン情報は非表示 */
+div#token {
+    display: none;
+}
+#map {
+    height: 760px !important;
+}
+#route-view {
+    position: absolute;
+    width: 130px;
+    height: 24px;
+    z-index: 1000;
+}
+#select-date {
+    position: absolute;
+    top: 90px;
+    width: 130px;
+    background: #f6f6f6;
+    border: 1px solid #c5c5c5;
+    background: #f6f6f6;
+    z-index: 1000;
+    text-align: center;
+    padding: 0;
+}
+#togeko {
+    margin: 0;
+    padding:0;
+    border-style: none;
+    z-index: 1000;
+    position: absolute;
+    top: 120px;
+}
+#togeko label {
+    padding: 0;
+    width: 65px;
+}
+
+#child-list {
+    margin: 0;
+    padding:0;
+    z-index: 1000;
+    border-style: none;
+    position: absolute;
+    top: 150px;
+    max-height:600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 150px;
+}
+
+#child-list label {
+    padding: 0.4em;
+    font-size: 11px;
+}
+
+#download .dl-type {
+  display: block;
+  margin-bottom: 10px;
+}
